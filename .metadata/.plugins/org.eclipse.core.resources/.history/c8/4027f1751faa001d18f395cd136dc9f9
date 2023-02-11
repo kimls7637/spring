@@ -18,7 +18,6 @@ public class Client {
 			System.out.println(v);
 		}
 		
-		System.out.println("깃 테스트");
 		ms.selectOne(vo);
 		vo.setMid("admin");
 		ms.selectOne(vo);
