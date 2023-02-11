@@ -1,0 +1,29 @@
+package model;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class DAO {
+	@Autowired
+	private ArrayList<String> datas;
+	public DAO() {
+		datas = new ArrayList<String>();
+	}
+	public ArrayList<String> getDatas() {
+		return datas;
+	}
+	public boolean insert(String str) {
+		try {
+			datas.add(str);
+		} catch(Exception e) {
+			return false;
+		}
+		return true;
+	}
+	public ArrayList<String> selectAll() {
+		return datas;
+	}
+}

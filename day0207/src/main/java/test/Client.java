@@ -1,0 +1,22 @@
+package test;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+import java.util.Scanner;
+
+public class Client {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("입력 : ");
+		String str = sc.next();
+		
+		AbstractApplicationContext factory = new GenericXmlApplicationContext("applicationContext.xml");
+		DAO dao = (DAO)factory.getBean("str"); // Look up
+		System.out.println(dao.getStr());
+
+		factory.close();
+		
+	}
+}

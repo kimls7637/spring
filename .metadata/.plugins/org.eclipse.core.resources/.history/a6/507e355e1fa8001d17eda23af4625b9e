@@ -1,0 +1,25 @@
+package com.spring.biz.member;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class Client {
+	public static void main(String[] args) {
+		AbstractApplicationContext factory=new GenericXmlApplicationContext("applicationContext.xml");
+		
+		MemberService bs=(MemberService)factory.getBean("memberService");
+		MemberVO vo=new MemberVO();
+		vo.setMid(null);
+		vo.setMpw(null);
+		vo.setMname(null);
+		vo.setRole(null);
+		ms.insertMember(vo);
+		 bs.insertBoard(vo);
+		
+		for(MemberVO v:bs.selectAll(vo)) {
+			System.out.println(v);
+		}
+		
+		factory.close();
+	}
+}

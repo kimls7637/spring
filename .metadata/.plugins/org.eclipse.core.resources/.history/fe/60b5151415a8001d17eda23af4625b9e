@@ -1,0 +1,9 @@
+package com.spring.biz.board;
+
+import org.springframework.stereotype.Service;
+
+@Service("boardService")
+public class BoardServiceImpl implements BoardService {
+
+	private BoardDAO boardDAO;
+}

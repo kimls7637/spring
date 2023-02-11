@@ -1,0 +1,8 @@
+package com.spring.biz.common;
+
+public class AroundAdvice {
+	public Object printLogAA(ProceedingJoinPoint pjp) {
+		System.out.println("[AA 로그] 비즈니스 메서드 수행을 가로챔(탈취)");
+		return null;
+	}
+}

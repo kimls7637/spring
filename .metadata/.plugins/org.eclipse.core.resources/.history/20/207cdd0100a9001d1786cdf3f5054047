@@ -1,0 +1,9 @@
+package com.spring.biz.common;
+
+import org.aspectj.lang.JoinPoint;
+
+public class AfterThrowingAdvice {
+	public void printLogATA(JoinPoint jp, Exception exceptionObj) {
+		System.out.println("[ATA 로그] 비즈니스 메서드 수행중에 예외발생시 호출되는 로그");
+	}
+}

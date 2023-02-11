@@ -1,0 +1,34 @@
+package ctrl;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+import model.DAO;
+import view.View;
+
+public class Ctrl {
+	private AbstractApplicationContext factory;
+	private View view;
+	private DAO dao;
+	public Ctrl() {
+		factory = new GenericXmlApplicationContext("applicationContext.xml");
+		view = new View();
+		dao = (DAO)factory.getBean("dao");
+	}
+	public void startApp() {
+		while(true) {
+			int action = view.printMenu();
+			if(action == 1) {
+				dao.insert(view.getStr());
+				System.out.println("추가성공");
+			}
+			else if(action == 2) {
+				view.printDatas(dao.selectAll()));
+			}
+			else {
+				view.powerOff();
+				break;
+			}
+		}
+	}
+}

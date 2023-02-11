@@ -1,0 +1,12 @@
+package ctrl;
+
+public class Ctrl {
+	public Ctrl() {
+		
+	}
+	public void startApp() {
+		while(true) {
+			int action = view.printMenu();
+		}
+	}
+}

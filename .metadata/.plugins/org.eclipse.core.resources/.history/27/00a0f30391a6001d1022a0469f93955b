@@ -1,0 +1,28 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class Client {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		AbstractApplicationContext factory = new GenericXmlApplicationContext("applicationContext.xml");
+		TestBean tb = (TestBean)factory.getBean("tb");
+		ArrayList<String> datas = tb.getDatas();
+		System.out.println("확인 : ");
+		for(String v : datas) {
+			System.out.println(v);
+		}
+		
+		String str = sc.next();
+		tb.insert(str);
+		
+		factory.close();
+		
+	}
+}

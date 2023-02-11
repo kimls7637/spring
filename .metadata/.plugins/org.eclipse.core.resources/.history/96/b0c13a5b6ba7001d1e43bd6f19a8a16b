@@ -1,0 +1,20 @@
+package test;
+
+import org.springframework.stereotype.Component;
+
+@Component("kiwi")
+public class KiwiPhone implements Phone {
+	private KiwiWatch watch;
+	public void powerOn() {
+		System.out.println("키위폰 ON");
+	}
+	public void powerOff() {
+		System.out.println("키위폰 OFF");
+	}
+	public void volumeUp() {
+		watch.volumeUp();
+	}
+	public void volumeDown() {
+		watch.volumeDown();
+	}
+}

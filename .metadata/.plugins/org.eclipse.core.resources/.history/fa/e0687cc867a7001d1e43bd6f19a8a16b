@@ -1,0 +1,10 @@
+package test;
+
+import org.springframework.stereotype.Component;
+
+@Component("aw")
+public interface Watch {
+	void volumeUp();
+	void volumeDown();
+	// public abstract 생략가능
+}

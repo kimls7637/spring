@@ -1,0 +1,16 @@
+package test;
+
+import java.util.List;
+import java.util.ArrayListl
+
+public class TestBean {
+	private ArrayList<String> datas;
+	
+	private List<String> list;
+	public List<String> getList(){
+		return list;
+	}
+	public void setList(List<String> list) {
+		this.list = list;
+	}
+}

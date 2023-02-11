@@ -1,0 +1,32 @@
+package test;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+import java.util.Scanner;
+
+public class Client {
+	public static void main(String[] args) {
+		
+		AbstractApplicationContext factory = new GenericXmlApplicationContext("applicationContext.xml");
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("apple 과 kiw 중에 골라주세요");
+		System.out.print(">> ");
+		String ans = sc.next();
+		
+		if(ans.equals("apple")) {
+			
+		} else if(ans.equals("kiwi")) {
+			
+		} else {
+			System.out.println("해당 객체가 없습니다...");
+		}
+		
+		Phone phone = (Phone)factory.getBean("kiwi");
+		phone.volumeDown();
+		
+		factory.close();
+		sc.close();
+		
+	}
+}

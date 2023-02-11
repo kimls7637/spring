@@ -1,0 +1,31 @@
+package com.spring.biz.board;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.List;
+
+@Repsitory("board")
+public class BoardDAO {
+	private Connection conn;
+	private PreparedStatement pstmt;
+	
+	private final String SQL_INSERT="";
+	private final String SQL_UPDATE="";
+	private final String SQL_DELETE="";
+	
+	private final String SQL_SELECT_ALL="";
+	private final String SQL_SELECT_ONE="";
+	
+	public void insertBoard(BoardVO vo) {
+	}
+	public void updateBoard(BoardVO vo) {
+	}
+	public void deleteBoard(BoardVO vo) {
+	}
+	public List<BoardVO> selectAll(BoardVO vo) {
+		return null;
+	}
+	public BoardVO selectOne(BoardVO vo) {
+		return null;
+	}
+}

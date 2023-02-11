@@ -1,0 +1,28 @@
+package ctrl;
+
+import model.DAO;
+import view.View;
+
+public class Ctrl {
+	private View view;
+	private DAO dao;
+	public Ctrl() {
+		view = new View();
+		dao = new DAO();
+	}
+	public void startApp() {
+		while(true) {
+			int action = view.printMenu();
+			if(action == 1) {
+				dao.insert(view.getStr());
+			}
+			else if(action == 2) {
+				dao.selectAll();
+			}
+			else {
+				view.powerOff();
+				break;
+			}
+		}
+	}
+}

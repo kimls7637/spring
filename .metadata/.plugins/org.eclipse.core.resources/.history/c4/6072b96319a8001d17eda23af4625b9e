@@ -1,0 +1,12 @@
+package com.spring.biz.common;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class JDBCUtil {
+	public static Connection getConntion() {
+		return null;
+	}
+	public static void close(Connection conn,PreparedStatement pstmt) {
+	}
+}

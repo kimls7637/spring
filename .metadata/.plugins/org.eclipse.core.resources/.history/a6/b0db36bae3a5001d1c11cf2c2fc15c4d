@@ -1,0 +1,30 @@
+package test;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+
+public class Client {
+	public static void main(String[] args) {
+		/*
+		// Phone phone = new ApplePhone();
+		// 앞에 생략 가능
+		BeanFactory bf = new BeanFactory();
+		// Phone phone = (Phone)bf.getBean("kiwi");
+		Phone phone = (Phone)bf.getBean(args[0]); 
+		// 오브젝트로 나오기 떄문에 형번환
+		phone.powerOn();
+		phone.volumeUp();
+		phone.volumeDown();
+		phone.powerOff();
+		*/
+		
+		AbstractApplicationContext factory = new GenericXmlApplicationContext("applicationContext.xml");
+		Phone phone = (Phone)factory.getBean("apple");
+		phone.powerOn();
+		phone.volumeUp();
+		phone.volumeDown();
+		phone.powerOff();
+		
+	}
+}

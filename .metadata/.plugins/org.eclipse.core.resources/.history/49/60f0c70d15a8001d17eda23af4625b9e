@@ -1,0 +1,7 @@
+package com.spring.biz.board;
+
+@Service("boardService")
+public class BoardServiceImpl implements BoardService {
+
+	private BoardDAO boardDAO;
+}

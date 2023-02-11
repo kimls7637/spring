@@ -1,0 +1,25 @@
+package ctrl;
+
+import view.View;
+
+public class Ctrl {
+	private View view;
+	public Ctrl() {
+		view = new View();
+	}
+	public void startApp() {
+		while(true) {
+			int action = view.printMenu();
+			if(action == 1) {
+				
+			}
+			else if(action == 2) {
+				
+			}
+			else {
+				view.powerOff();
+				break;
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+package view;
+
+import java.util.Scanner;
+
+public class View {
+	private Scanner sc;
+	public View() {
+		sc = new Scanner(System.in);
+	}
+	public int printMenu() {
+		System.out.println("=== 실습 ===");
+		System.out.println("1. 작성하기");
+		System.out.println("2. 출력하기");
+		System.out.println("3. 종료하기");
+		System.out.print("입력 : ");
+		int action = sc.nextInt();
+		return action;
+	}
+	public void powerOff() {
+		System.out.println("실습을 종료합니다.");
+	}
+}

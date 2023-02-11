@@ -1,0 +1,11 @@
+package com.spring.biz.member;
+
+import java.util.List;
+
+public interface BoardService {
+	public void insertBoard(MemberVO vo);
+	public void updateBoard(MemberVO vo);
+	public void deleteBoard(MemberVO vo);
+	public List<MemberVO> selectAll(MemberVO vo);
+	public MemberVO selectOne(MemberVO vo);
+}

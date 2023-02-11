@@ -1,0 +1,50 @@
+package com.spring.biz.board;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.spring.biz.common.LogAdvice;
+
+@Service("boardService")
+public class BoardServiceImpl implements BoardService {
+	
+	@Autowired
+	private BoardDAO boardDAO;
+	private LogAdvice la;
+	public BoardServiceImpl() {
+		this.la = new LogAdvice();
+	}
+
+	@Override
+	public void insertBoard(BoardVO vo) {
+		la.printLog();
+		boardDAO.insertBoard(vo);
+	}
+
+	@Override
+	public void updateBoard(BoardVO vo) {
+		la.printLog();
+		boardDAO.updateBoard(vo);
+	}
+
+	@Override
+	public void deleteBoard(BoardVO vo) {
+		la.printLog();
+		boardDAO.deleteBoard(vo);
+	}
+
+	@Override
+	public ArrayList<BoardVO> selectAll(BoardVO vo) {
+		la.printLog();
+		return boardDAO.selectAll(vo);
+	}
+
+	@Override
+	public BoardVO selectOne(BoardVO vo) {
+		la.printLog();
+		return boardDAO.selectOne(vo);
+	}
+
+}

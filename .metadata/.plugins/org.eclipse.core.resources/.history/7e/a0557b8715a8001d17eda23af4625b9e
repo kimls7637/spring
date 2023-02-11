@@ -1,0 +1,9 @@
+package com.spring.biz.board;
+
+public class BoardService {
+	public void insertBoard(BoardVO vo);
+	public void updateBoard(BoardVO vo);
+	public void deleteBoard();
+	public List<BoardVO>
+	public Board selectAll_
+}
