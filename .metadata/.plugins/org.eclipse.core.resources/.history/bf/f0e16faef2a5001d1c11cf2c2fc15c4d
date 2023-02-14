@@ -1,8 +1,0 @@
-package test;
-
-public interface Remote {
-	void powerOn();
-	void powerOff();
-	void up();
-	void down();
-}
