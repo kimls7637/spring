@@ -2,6 +2,7 @@ package com.spring.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -48,8 +49,18 @@ public class DispatcherServlet extends HttpServlet {
     		// 응답
     		response.sendRedirect("test2.jsp");
     	}
-    	else if (path.equals("/main.do")) {
+    	else if (path.equals("/search.do")) {
+    		String search = request.getParameter("search");
+    		BoardDAO bdao = new BoardDAO();
+    		BoardVO vo = new BoardVO();
+    		vo.setWriter(search);
+    		System.out.println(search);
+    		System.out.println(bdao.selectAllSearch(vo));
     		
+    		request.setAttribute("bList", bdao.selectAllSearch(vo));
+    		
+    		RequestDispatcher dis = request.getRequestDispatcher("test2.jsp");
+    		dis.forward(request, response);
     	}
     }
 	/**
