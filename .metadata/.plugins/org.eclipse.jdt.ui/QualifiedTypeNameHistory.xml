@@ -3,4 +3,12 @@
     <fullyQualifiedTypeName name="org.springframework.context.support.AbstractApplicationContext"/>
     <fullyQualifiedTypeName name="org.springframework.context.support.GenericApplicationContext"/>
     <fullyQualifiedTypeName name="org.springframework.context.support.GenericXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="org.apache.tomcat.dbcp.dbcp2.Jdbc41Bridge"/>
+    <fullyQualifiedTypeName name="org.springframework.jdbc.core.JdbcTemplate"/>
+    <fullyQualifiedTypeName name="javax.swing.tree.RowMapper"/>
+    <fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapper"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.spring.biz.member.MemberDAO2"/>
+    <fullyQualifiedTypeName name="com.spring.biz.member.MemberVO"/>
+    <fullyQualifiedTypeName name="java.lang.LinkageError"/>
 </qualifiedTypeNameHistroy>
