@@ -20,6 +20,16 @@ import com.spring.biz.board.BoardVO;
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	private HandlerMapping handlerMapping;
+	private ViewResolver viewResolver;
+	
+	public void init() throws ServletException {
+		handlerMapping = new HandlerMapping();
+		viewResolver = new ViewResolver();
+		viewResolver.setPrefix("./");
+		viewResolver.setSuffix(".jsp");
+	}
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,35 +43,33 @@ public class DispatcherServlet extends HttpServlet {
     	String path = uri.substring(uri.lastIndexOf("/")); // 마지막 슬래시 기준으로 서브스트링
     	System.out.println("DS : " + path);
     	
-    	if(path.equals("/login.do")) {
-    		System.out.println("로그인 로직 수행");
-    		
-    		// 사용자가 전달한 정보를 추출
-    		// M 파트와 작업
-    		String msg = request.getParameter("msg");
-    		BoardDAO boardDAO = new BoardDAO();
-    		BoardVO vo = new BoardVO();
-    		vo.setTitle("TEST");
-    		vo.setWriter("KIM");
-    		vo.setContent(msg);
-    		boardDAO.insertBoard(vo);
-    		
-    		// 응답
-    		response.sendRedirect("test2.jsp");
+    	Controller ctrl = handlerMapping.getController(path);
+    	String viewName = ctrl.handleRequest(request, response);
+    	
+    	if(!viewName.contains(".do")) {
+    		viewName = viewResolver.getView(viewName);
     	}
-    	else if (path.equals("/search.do")) {
-    		String search = request.getParameter("search");
-    		BoardDAO bdao = new BoardDAO();
-    		BoardVO vo = new BoardVO();
-    		vo.setWriter(search);
-    		System.out.println(search);
-    		System.out.println(bdao.selectAllSearch(vo));
-    		
-    		request.setAttribute("bList", bdao.selectAllSearch(vo));
-    		
-    		RequestDispatcher dis = request.getRequestDispatcher("test2.jsp");
-    		dis.forward(request, response);
-    	}
+    	response.sendRedirect(viewName);
+    	
+//    	if(path.equals("/login.do")) {
+//    		System.out.println("로그인 로직 수행");
+//    		new LoginController().handleRequest(request, response);
+//    		// 응답
+//    		response.sendRedirect("test2.jsp");
+//    	}
+//    	else if (path.equals("/search.do")) {
+//    		String search = request.getParameter("search");
+//    		BoardDAO bdao = new BoardDAO();
+//    		BoardVO vo = new BoardVO();
+//    		vo.setWriter(search);
+//    		System.out.println(search);
+//    		System.out.println(bdao.selectAllSearch(vo));
+//    		
+//    		request.setAttribute("bList", bdao.selectAllSearch(vo));
+//    		
+//    		RequestDispatcher dis = request.getRequestDispatcher("test2.jsp");
+//    		dis.forward(request, response);
+//    	}
     }
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

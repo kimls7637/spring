@@ -5,6 +5,8 @@ C:\eclipse\workspaces2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\213
 \day0207.hw2\src\main\java
 C:\eclipse\workspaces2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1834492928.index
 \gitTest\src\main\java
+C:\eclipse\workspaces2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1365176228.index
+\day0215.2\src\main\java
 C:\eclipse\workspaces2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2735798121.index
 \day0206\src\main\java
 C:\eclipse\workspaces2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3283885708.index
