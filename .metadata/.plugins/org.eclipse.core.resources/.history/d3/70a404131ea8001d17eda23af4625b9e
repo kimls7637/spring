@@ -1,8 +1,0 @@
-package com.spring.biz.member;
-
-public class MemberVO {
-	private String mid;
-	private String mpw;
-	private String mname;
-	private String role;
-}

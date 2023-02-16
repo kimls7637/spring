@@ -11,4 +11,5 @@
     <fullyQualifiedTypeName name="com.spring.biz.member.MemberDAO2"/>
     <fullyQualifiedTypeName name="com.spring.biz.member.MemberVO"/>
     <fullyQualifiedTypeName name="java.lang.LinkageError"/>
+    <fullyQualifiedTypeName name="org.apache.jasper.compiler.Node.DoBodyAction"/>
 </qualifiedTypeNameHistroy>

@@ -7,6 +7,8 @@ C:\eclipse\workspaces2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\183
 \gitTest\src\main\java
 C:\eclipse\workspaces2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1365176228.index
 \day0215.2\src\main\java
+C:\eclipse\workspaces2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2345657794.index
+\day0215.hw\src\main\java
 C:\eclipse\workspaces2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2735798121.index
 \day0206\src\main\java
 C:\eclipse\workspaces2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3283885708.index

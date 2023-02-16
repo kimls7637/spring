@@ -1,7 +1,0 @@
-package com.spring.biz.common;
-
-public class AfterReturningAdvice {
-	public void printLogARA() {
-		System.out.println("[AR 로그]");
-	}
-}
