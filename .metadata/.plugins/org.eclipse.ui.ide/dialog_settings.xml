@@ -14,10 +14,15 @@
 		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\young\Desktop\기미슬\day71 (2)"/>
+			<item value="C:\Users\young\Desktop\day71 (1)"/>
+			<item value="C:\Users\young\Desktop\기미슬\day71"/>
 			<item value="C:\Users\young\Desktop\spring-main\spring-main\day0213"/>
 			<item value="C:\eclipse\workspaces2\day0214"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+			<item value="C:\eclipse\workspaces2\day0217\src\main\resources\applicationContext.xml"/>
 			<item value="C:\eclipse\workspaces2\day0214\day0213.zip"/>
 			<item value="C:\eclipse\workspaces2\day0213\day0213.zip"/>
 		</list>
