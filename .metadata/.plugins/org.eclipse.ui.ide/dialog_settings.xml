@@ -8,12 +8,13 @@
 		</list>
 	</section>
 	<section name="ExternalProjectImportWizard">
-		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="true"/>
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value=""/>
 			<item value="C:\Users\young\Desktop\기미슬\day71 (2)"/>
 			<item value="C:\Users\young\Desktop\day71 (1)"/>
 			<item value="C:\Users\young\Desktop\기미슬\day71"/>
@@ -21,6 +22,8 @@
 			<item value="C:\eclipse\workspaces2\day0214"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\Users\young\Documents\카카오톡 받은 파일\day71 (3).zip"/>
+			<item value="C:\Users\young\Desktop\기미슬\day0220T.zip"/>
 			<item value=""/>
 			<item value="C:\eclipse\workspaces2\day0217\src\main\resources\applicationContext.xml"/>
 			<item value="C:\eclipse\workspaces2\day0214\day0213.zip"/>

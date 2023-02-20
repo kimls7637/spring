@@ -7,12 +7,10 @@
     <fullyQualifiedTypeName name="org.springframework.jdbc.core.JdbcTemplate"/>
     <fullyQualifiedTypeName name="javax.swing.tree.RowMapper"/>
     <fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapper"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.spring.biz.member.MemberDAO2"/>
     <fullyQualifiedTypeName name="java.lang.LinkageError"/>
     <fullyQualifiedTypeName name="org.apache.jasper.compiler.Node.DoBodyAction"/>
     <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
-    <fullyQualifiedTypeName name="com.spring.biz.member.MemberVO"/>
     <fullyQualifiedTypeName name="com.spring.biz.member.MemberDAO"/>
     <fullyQualifiedTypeName name="com.spring.biz.board.BoardVO"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
@@ -36,4 +34,7 @@
     <fullyQualifiedTypeName name="com.mysql.cj.util.StringUtils"/>
     <fullyQualifiedTypeName name="com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse.File"/>
     <fullyQualifiedTypeName name="javax.annotation.PostConstruct"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.spring.biz.board.BoardService"/>
+    <fullyQualifiedTypeName name="com.spring.biz.member.MemberVO"/>
 </qualifiedTypeNameHistroy>
