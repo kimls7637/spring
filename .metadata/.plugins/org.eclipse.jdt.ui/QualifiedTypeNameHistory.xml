@@ -37,4 +37,7 @@
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.spring.biz.board.BoardService"/>
     <fullyQualifiedTypeName name="com.spring.biz.member.MemberVO"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ControllerAdvice"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ExceptionHandler"/>
 </qualifiedTypeNameHistroy>
