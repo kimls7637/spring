@@ -14,22 +14,16 @@ public class BoardDAO2 { // 스프링 JDBC를 활용하는 DAO
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	private final String SQL_INSERT="INSERT INTO BOARD(TITLE,WRITER,CONTENT, UPLOAD) VALUES(?,?,?,?)";
-	private final String SQL_INSERT_DEFAULT="INSERT INTO BOARD(TITLE,WRITER,CONTENT) VALUES(?,?,?)";
+	private final String SQL_INSERT="INSERT INTO BOARD(TITLE,WRITER,CONTENT,FILE) VALUES(?,?,?,?)";
 	private final String SQL_UPDATE="UPDATE BOARD SET TITLE=?,CONTENT=? WHERE BID=?";
 	private final String SQL_DELETE="DELETE FROM BOARD WHERE BID=?";
 
-	private final String SQL_SELECT_ALL="SELECT * FROM BOARD";
+	private final String SQL_SELECT_ALL="SELECT * FROM BOARD ORDER BY BID DESC";
 	private final String SQL_SELECT_ONE="SELECT * FROM BOARD WHERE BID=?";
 
 	public boolean insertBoard(BoardVO vo) {
 		System.out.println("BoardDAO2의 insert()");
-		String upl = vo.getUploadFile().getOriginalFilename();
-		if(upl.equals("")) {
-			jdbcTemplate.update(SQL_INSERT_DEFAULT, vo.getTitle(),vo.getWriter(),vo.getContent());
-		} else {
-			jdbcTemplate.update(SQL_INSERT, vo.getTitle(),vo.getWriter(),vo.getContent(), upl);
-		}
+		jdbcTemplate.update(SQL_INSERT, vo.getTitle(),vo.getWriter(),vo.getContent(),vo.getFile());
 		return true;
 	}
 	public boolean updateBoard(BoardVO vo) {
@@ -49,7 +43,6 @@ public class BoardDAO2 { // 스프링 JDBC를 활용하는 DAO
 
 	public List<BoardVO> selectAll(BoardVO vo) {
 		System.out.println("BoardDAO2의 selectAll()");
-		System.out.println(jdbcTemplate.query(SQL_SELECT_ALL, new BoardRowMapper()));
 		return jdbcTemplate.query(SQL_SELECT_ALL, new BoardRowMapper());
 	}
 	public BoardVO selectOne(BoardVO vo) {
@@ -67,7 +60,7 @@ class BoardRowMapper implements RowMapper<BoardVO> {
 		data.setContent(rs.getString("CONTENT"));
 		data.setTitle(rs.getString("TITLE"));
 		data.setWriter(rs.getString("WRITER"));
-		data.setUpload(rs.getString("UPLOAD"));
+		data.setFile(rs.getString("FILE"));
 		return data;
 	}
 	

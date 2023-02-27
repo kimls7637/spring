@@ -31,6 +31,10 @@ public class MemberController {
 	public String selectOneMember(MemberVO vo,HttpSession session) {
 		System.out.println("selectOneMember() 입장");
 
+		if(vo.getMid().equals("timo")) {
+	         throw new IllegalArgumentException("내가만든에러");
+	     }
+		
 		vo=memberService.selectOne(vo);
 		
 		if(vo==null) {

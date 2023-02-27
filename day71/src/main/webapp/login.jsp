@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -22,11 +23,13 @@
 								<!-- Header -->
 				<header id="header">
 				<c:if test="${member.mid != null}">
-					<a href="logout.do" class="logo"><strong>로그아웃</strong></a>
+					<a href="logout.do" class="logo"><strong><spring:message code="message.main.gnb" /></strong></a>
 				</c:if>
 				<c:if test="${member.mid == null}">
-					<a href="login.do" class="logo"><strong>로그인/회원가입</strong></a>
+					<a href="login.do" class="logo"><strong><spring:message code="message.login.gnb" /></strong></a>
 				</c:if>
+				<a href="login.do?lang=en">ENGLISH</a>
+				<a href="login.do?lang=ko">한국어</a>
 				<ul class="icons">
 						<li><a href="main.do" class="icon brands fa-medium-m"><span
 								class="label"></span></a></li>
@@ -41,12 +44,12 @@
 				<section id="banner">
 					<div class="content">
 						<header>
-							<h1>로 그 인</h1>
+							<h1><spring:message code="message.login.title" /></h1>
 						</header>
 						<form method="post" action="login.do">
 							<div class="row gtr-uniform">
 								<div class="col-6 col-12-xsmall">
-									<input type="text" name="mid" placeholder="id를 입력하세요." value="${user.mid}"/>
+									<input type="text" name="mid" placeholder="id를 입력하세요." value="${user.mid}" required />
 								</div>
 								<div class="col-6 col-12-xsmall">
 									<input type="password" name="mpw" placeholder="pw를 입력하세요." value="${user.mpw}"
@@ -54,8 +57,8 @@
 								</div>
 								<div class="col-12">
 									<ul class="actions">
-										<li><input type="submit" value="로그인" class="button big" /></li>
-										<li><a href="signup.do" class="button big primary">회원가입</a></li>
+										<li><input type="submit" value="<spring:message code="message.login.btnLogin" />" class="button big" /></li>
+										<li><a href="signup.do" class="button big primary"><spring:message code="message.login.btnSignup" /></a></li>
 									</ul>
 								</div>
 							</div>

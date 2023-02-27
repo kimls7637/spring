@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.spring.biz.board.BoardService;
+import com.spring.biz.board.BSI;
 import com.spring.biz.board.BoardVO;
 
 @Controller
 public class BoardController {
 	
 	@Autowired
-	private BoardService boardService;
-
+	private BSI boardService;
+	
 	// 검색조건들 전달하기위한 메서드
 	// 1. 메서드 호출 순서
 	//    @RequestMapping 보다 먼저 호출됨
@@ -77,14 +77,17 @@ public class BoardController {
 		
 		// 이미지 업로드
 		MultipartFile uploadFile=vo.getUploadFile();
+		vo.setFile("default.jpg");
 		if(!uploadFile.isEmpty()) {
 			System.out.println("이미지 업로드 확인");
 			String fileName=uploadFile.getOriginalFilename();
 			System.out.println("파일 이름 : "+fileName);
+			vo.setFile(fileName);
+			
 			// 사용자의 로컬PC에 저장된 이미지를 업로드한것이기때문에,
 			// 서버(프로젝트)에서 해당 이미지를 별도 관리하기위해 데이터를 복사해서 저장해야함!
 			try {
-				uploadFile.transferTo(new File("C:\\eclipse\\workspaces2\\day71\\src\\main\\webapp\\images\\"+fileName));
+				uploadFile.transferTo(new File("D:\\KIM1108\\workspace02\\day71\\src\\main\\webapp\\images\\"+fileName));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -12,7 +12,7 @@ public class Client {
 		System.out.print("작성자의 이름을 입력하세요. >>   ");
 		String name=new Scanner(System.in).next();
 		
-		BoardService bs=(BoardService)factory.getBean("boardService");
+		BS bs=(BS)factory.getBean("boardService");
 		BoardVO vo=new BoardVO();
 		vo.setTitle("제목");
 		vo.setWriter(name);

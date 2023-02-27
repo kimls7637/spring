@@ -10,12 +10,12 @@ public class BoardVO {
 	private String searchCondition;
 	private String searchContent;
 	private MultipartFile uploadFile;
-	private String upload;
-	public String getUpload() {
-		return upload;
+	private String file;
+	public String getFile() {
+		return file;
 	}
-	public void setUpload(String upload) {
-		this.upload = upload;
+	public void setFile(String file) {
+		this.file = file;
 	}
 	public MultipartFile getUploadFile() {
 		return uploadFile;
@@ -62,6 +62,6 @@ public class BoardVO {
 	@Override
 	public String toString() {
 		return "BoardVO [bid=" + bid + ", title=" + title + ", writer=" + writer + ", content=" + content
-				+ ", searchCondition=" + searchCondition + ", searchContent=" + searchContent + "]";
+				+ ", searchCondition=" + searchCondition + ", searchContent=" + searchContent + ", file=" + file + "]";
 	}
 }

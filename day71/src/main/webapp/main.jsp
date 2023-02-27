@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -21,10 +23,10 @@
 												<!-- Header -->
 				<header id="header">
 				<c:if test="${member.mid != null}">
-					<a href="logout.do" class="logo"><strong>로그아웃</strong></a>
+					<a href="logout.do" class="logo"><strong><spring:message code="message.main.gnb" /></strong></a>
 				</c:if>
 				<c:if test="${member.mid == null}">
-					<a href="login.do" class="logo"><strong>로그인/회원가입</strong></a>
+					<a href="login.do" class="logo"><strong><spring:message code="message.login.gnb" /></strong></a>
 				</c:if>
 				<ul class="icons">
 						<li><a href="main.do" class="icon brands fa-medium-m"><span
@@ -39,7 +41,7 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>메인 페이지</h1>
+										<h1><spring:message code="message.main.title" /></h1>
 									</header>
 
 									<span class="image main"><img src="images/pic.png" alt="귀여운 티모 이미지" /></span>
@@ -51,16 +53,19 @@
 											</c:forEach>
 										</select>
 										<input type="text" name="searchContent" placeholder="검색어를 입력하세요." required>
-										<input type="submit" value="검색" class="button primary icon solid fa-search">
+										<input type="submit" value="<spring:message code="message.main.search" />" class="button primary icon solid fa-search">
 									</form>
 
-									<h2>${member.mname}님, 안녕하세요! :D</h2>
+									<h2>${member.mname}<spring:message code="message.main.hello" /></h2>
 
+									<c:if test="${fn:length(datas) == 0}">
+										출력할 글이 없습니다!
+									</c:if>
+									<ul>
 										<c:forEach var="v" items="${datas}">
-											<a href="board.do?bid=${v.bid}">${v.bid}</a> | ${v.title} | ${v.writer} | ${v.content}
-												<img src="images/${v.upload}" style="width:200px;">
-												<br>
+											<li><a href="board.do?bid=${v.bid}">${v.bid}</a> | ${v.title} | ${v.writer} | ${v.content}</li>
 										</c:forEach>
+									</ul>
 									
 									<hr class="major" />
 

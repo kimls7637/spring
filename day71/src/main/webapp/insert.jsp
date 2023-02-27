@@ -10,6 +10,8 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
+	
+	<script type="text/javascript" src="assets/js/upload.js"></script>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -42,7 +44,7 @@
 										<h1>글 작성 페이지</h1>
 									</header>
 
-									<span class="image main"><img src="images/pic.png" alt="귀여운 티모 이미지" /></span>
+									<span class="image fit"><img src="" class="thumb" /></span>
 
 													<form method="post" action="insert.do" enctype="multipart/form-data">
 														<div class="row gtr-uniform">
@@ -59,11 +61,8 @@
 															<!-- Break -->
 															<div class="col-12">
 																<ul class="actions">
-																	<li><input type="file" name="uploadFile" id="input-file"> <input type="submit" value="글 등록하기" class="primary" /></li>
+																	<li><input type="file" name="uploadFile" class="hidden_input" id="imageSelector"> <input type="submit" value="글 등록하기" class="primary" /></li>
 																</ul>
-															</div>
-															<div class="col-12">
-															<img src="" alt="" id="preview-img" style="width:200px;">
 															</div>
 														</div>
 													</form>
@@ -184,50 +183,7 @@
 					</div>
 
 			</div>
-<script>
-	
-	const $fileInput = document.getElementById("input-file");
-	// 사진
-	const $previewImg = document.getElementById("preview-img");
-	// 프리뷰
-	const reader = new FileReader();
-	// 파일리더
-	      
-	reader.onload = function(e){
-	// 리더가 로드되면
-		$previewImg.src = e.target.result;
-		// 결과를 미리보기 이미지에 박아 
-	}
-	
-	$fileInput.addEventListener("change", function(){
-	// 파일이 들어오면
-		try{
-			const files = this.files;
-			// 입력받은 파일
-	   
-			if(files && files[0]){ // 파일을 여러개 선택해서 보낼 수 있어서 배열로 들어옴
-			// 배열의 첫번째 값이 들어있는지 확인
-				const fileName = this.value.split(".");
-				// 파일형태를 알아보기 위해 . 을 기준으로 스플릿해서 자름 xxx.jsp > xxx jsp
-				const ex = fileName.at(-1); // 배열의 제일 마지막것 jsp
-				if(ex == "jpg" || ex == "jpeg" || ex == "png" || ex == "gif"){
-				// 형태가 사진형태라면
-					reader.readAsDataURL(files[0]);
-					// 리더 로드 (파일의 첫번째 값)
-				}else{
-					alert("사진만 첨부해주세요.");
-					$previewImg.src = "";
-				}
-			}else{ // 잘 안들어왔으면
-				$previewImg.src = ""; //미리보기는 없어용!
-			}
-		}catch(error){ 
-		}
-	})
-            
-	
-	</script>
-	
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>

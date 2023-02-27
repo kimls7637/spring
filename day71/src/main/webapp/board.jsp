@@ -42,7 +42,7 @@
 										<h1>상세 페이지</h1>
 									</header>
 
-									<span class="image main"><img src="images/pic.png" alt="귀여운 티모 이미지" /></span>
+									<span class="image fit"><img src="images/${data.file}" alt="사용자가 등록한 이미지" /></span>
 
 									<form method="post" action="update.do">
 									<input type="hidden" name="bid" value="${data.bid}">
