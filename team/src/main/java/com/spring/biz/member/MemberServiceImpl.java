@@ -51,4 +51,14 @@ public class MemberServiceImpl implements MemberService {
 		return MemberDAO.updateAuthStatus(vo);
 	}
 
+	@Override
+	public MemberVO checkNickName(MemberVO vo) {
+		return MemberDAO.checkNickName(vo);
+	}
+
+	@Override
+	public MemberVO checkId(MemberVO vo) {
+		return MemberDAO.checkId(vo);
+	}
+
 }

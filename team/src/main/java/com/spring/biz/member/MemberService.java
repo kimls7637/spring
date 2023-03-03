@@ -8,6 +8,8 @@ public interface MemberService {
 	public boolean updateMemberChk(MemberVO vo);
 	public boolean updateAuthStatus(MemberVO vo);
 	public MemberVO selectOneMember(MemberVO vo);
+	public MemberVO checkNickName(MemberVO vo);
+	public MemberVO checkId(MemberVO vo);
 	public List<MemberVO> selectAll_GRADE(MemberVO vo);
 	public List<MemberVO> selectAll_REPORT(MemberVO vo);
 	public boolean deleteMember(MemberVO vo);
