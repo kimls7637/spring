@@ -35,8 +35,8 @@ public class Client {
 			System.out.println("이름을 입력하세요. >> ");
 			String name=sc.next();
 			
-			mvo.setmId(id);
-			mvo.setmPw(pw);
+			mvo.setId(id);
+			mvo.setPw(pw);
 			mvo.setmName(name);
 			if(ms.insertMember(mvo)) {
 				System.out.println("회원가입 성공");
@@ -51,8 +51,8 @@ public class Client {
 			System.out.println("pw : ");
 			String pw=sc.next();
 			
-			mvo.setmId(id);
-			mvo.setmPw(pw);
+			mvo.setId(id);
+			mvo.setPw(pw);
 			mvo=ms.selectOne(mvo);
 			
 			if(mvo==null) {

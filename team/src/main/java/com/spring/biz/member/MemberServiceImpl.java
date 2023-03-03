@@ -41,4 +41,14 @@ public class MemberServiceImpl implements MemberService {
 		return MemberDAO.deleteMember(vo);
 	}
 
+	@Override
+	public boolean updateMemberChk(MemberVO vo) {
+		return MemberDAO.updateMemberChk(vo);
+	}
+
+	@Override
+	public boolean updateAuthStatus(MemberVO vo) {
+		return MemberDAO.updateAuthStatus(vo);
+	}
+
 }

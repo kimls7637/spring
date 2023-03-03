@@ -11554,18 +11554,7 @@ textarea.form-control {
   font-weight: 400;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-  background: #fff;
-}
 
-::-webkit-scrollbar-thumb {
-  background: #acf3e2;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #c2f6ea;
-}
 
 .table.v-align-center th, .table.v-align-center td {
   vertical-align: middle !important;

@@ -24,17 +24,17 @@ public class MemberDAO2 {
 	private final String SQL_SELECT_ONE="SELECT * FROM MEMBER WHERE MID=?";
 
 	public boolean insertMember(MemberVO vo) {
-		jdbcTemplate.update(SQL_INSERT,vo.getmId(),vo.getmPw(),vo.getmName());
+		jdbcTemplate.update(SQL_INSERT,vo.getId(),vo.getPw(),vo.getmName());
 		return true;
 	}
 
 	public boolean updateMember(MemberVO vo) {
-		jdbcTemplate.update(SQL_UPDATE,vo.getmPw(),vo.getmName(),vo.getmId());
+		jdbcTemplate.update(SQL_UPDATE,vo.getPw(),vo.getmName(),vo.getId());
 		return true;
 	}
 
 	public boolean deleteMember(MemberVO vo) {
-		jdbcTemplate.update(SQL_DELETE,vo.getmId());
+		jdbcTemplate.update(SQL_DELETE,vo.getId());
 		return true;
 	}
 
@@ -44,7 +44,7 @@ public class MemberDAO2 {
 	}
 
 	public MemberVO selectOne(MemberVO vo) {
-		Object[] args = {vo.getmId()};
+		Object[] args = {vo.getId()};
 		
 		try {
 			return jdbcTemplate.queryForObject(SQL_SELECT_ONE, args, new MemberRowMapper());
@@ -62,8 +62,8 @@ class MemberRowMapper implements RowMapper<MemberVO>{
 	public MemberVO mapRow(ResultSet rs, int rowNum) throws SQLException {
 		System.out.println("알수있게 민성"+rowNum);
 		MemberVO data=new MemberVO();
-		data.setmId(rs.getString("MID"));
-		data.setmPw(rs.getString("MPW"));
+		data.setId(rs.getString("MID"));
+		data.setPw(rs.getString("MPW"));
 		data.setmName(rs.getString("MNAME"));
 		data.setRole(rs.getString("ROLE"));
 		return data;

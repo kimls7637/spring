@@ -10,9 +10,9 @@ public class ReportDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	private final String SQL_INSERT = "INSERT INTO REPORT (RTYPE, RID, RBNUM) VALUES (?, ?, ?);";
-	private final String SQL_DELETE = "DELETE FROM REPORT WHERE RTYPE=? AND RID=? AND RBNUM=?;";
-	private final String SQL_DELETE_BOARD = "DELETE FROM REPORT WHERE RTYPE='게시글' AND RBNUM=?;";
+	private final String SQL_INSERT = "INSERT INTO REPORT2 (RTYPE, RID, RBNUM) VALUES (?, ?, ?);";
+	private final String SQL_DELETE = "DELETE FROM REPORT2 WHERE RTYPE=? AND RID=? AND RBNUM=?;";
+	private final String SQL_DELETE_BOARD = "DELETE FROM REPORT2 WHERE RTYPE='게시글' AND RBNUM=?;";
 	
 	public boolean insertReport(ReportVO vo) {
 		jdbcTemplate.update(SQL_INSERT, vo.getRtype(), vo.getRid(), vo.getRbnum());

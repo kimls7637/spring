@@ -18,6 +18,22 @@ public class MemberVO {
     private String grade;
     private int reportCnt;
     private int heartCnt;
+	private int mFlag;
+	private String mAuthkey;
+	
+	
+	public int getmFlag() {
+		return mFlag;
+	}
+	public void setmFlag(int mFlag) {
+		this.mFlag = mFlag;
+	}
+	public String getmAuthkey() {
+		return mAuthkey;
+	}
+	public void setmAuthkey(String mAuthkey) {
+		this.mAuthkey = mAuthkey;
+	}
 	public String getId() {
 		return id;
 	}
@@ -84,4 +100,14 @@ public class MemberVO {
 	public void setHeartCnt(int heartCnt) {
 		this.heartCnt = heartCnt;
 	}
+	@Override
+	public String toString() {
+		return "MemberVO [id=" + id + ", pw=" + pw + ", mName=" + mName + ", mNickname=" + mNickname + ", mEmail="
+				+ mEmail + ", mEmailChk=" + mEmailChk + ", mJoinDate=" + mJoinDate + ", mStopDate=" + mStopDate
+				+ ", grade=" + grade + ", reportCnt=" + reportCnt + ", heartCnt=" + heartCnt + ", mFlag=" + mFlag
+				+ ", mAuthkey=" + mAuthkey + "]";
+	}
+	
+	
+	
 }

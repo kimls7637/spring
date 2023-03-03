@@ -9,7 +9,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-
 public class BoardDAO2 { // 스프링 JDBC를 활용하는 DAO(버전 업그레이드)
 	// DI 의존주입
 	@Autowired // 메모리에 있는 객체 넣어줘~ 메모리에 만들러가야지~! xml로
@@ -45,13 +44,13 @@ public class BoardDAO2 { // 스프링 JDBC를 활용하는 DAO(버전 업그레�
 	public List<BoardVO> selectAll(BoardVO vo) { // 셀렉올은 query()
 		System.out.println("BoardDAO2의 selectAll()");
 		if(vo == null) {
-		return jdbcTemplate.query(SQL_SELECT_ALL, new BoardRowMapper());
+			return jdbcTemplate.query(SQL_SELECT_ALL, new BoardRowMapper());
 		}
 		else{
 			Object[] args = {vo.getWriter()}; 
 			return jdbcTemplate.query(SQL_SELECT_SEARCH, args, new BoardRowMapper());
 		}
-		
+
 		// 첫번째 인자는 무조건 sql, 마지막인자 중요함
 		// output만들어내는 과정필요했었음
 		// output을 만들어주는 작업을 다른 클래스에게 맡길것(BoardRowMapper)★ 아래에서 직접 만들것
@@ -65,6 +64,9 @@ public class BoardDAO2 { // 스프링 JDBC를 활용하는 DAO(버전 업그레�
 		// 사이에 물음표 무한하게 넣지않고, 오브젝트 배열(인자값 묶음)을 넣어둠★
 	}
 }
+
+
+
 
 // 멤버에서 했으면 멤버로우매퍼일것, <>안에는 vo이름 적어줌
 // ★ RowMapper: 스프링에서 제공해주는 근본 인터페이스
@@ -81,5 +83,7 @@ class BoardRowMapper implements RowMapper<BoardVO>{
 		data.setContent(rs.getString("CONTENT"));
 		return data;
 	}
-	
+
+
+
 }

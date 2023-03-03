@@ -1,22 +1,23 @@
 package com.spring.biz.member;
 
 public class MemberVO {
-	private String mId;
-	private String mPw;
+	private String id;
+	private String pw;
 	private String mName;
 	private String role; // 권한
 	
-	public String getmId() {
-		return mId;
+	
+	public String getId() {
+		return id;
 	}
-	public void setmId(String mId) {
-		this.mId = mId;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getmPw() {
-		return mPw;
+	public String getPw() {
+		return pw;
 	}
-	public void setmPw(String mPw) {
-		this.mPw = mPw;
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
 	public String getmName() {
 		return mName;
@@ -32,7 +33,7 @@ public class MemberVO {
 	}
 	@Override
 	public String toString() {
-		return "MemberVO [mId=" + mId + ", mPw=" + mPw + ", mName=" + mName + ", role=" + role + "]";
+		return "MemberVO [id=" + id + ", pw=" + pw + ", mName=" + mName + ", role=" + role + "]";
 	}
 	
 

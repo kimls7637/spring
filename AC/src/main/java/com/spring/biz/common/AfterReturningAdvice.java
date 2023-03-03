@@ -31,7 +31,7 @@ public class AfterReturningAdvice {
 
 		if (obj instanceof MemberVO) {
 			System.out.println("회원 조회했습니다.");
-			if(((MemberVO) obj).getmId().equals("admin")){
+			if(((MemberVO) obj).getId().equals("admin")){
 				System.out.println("관리자 모드 수행함");
 			}
 		} else if (obj instanceof BoardVO) {

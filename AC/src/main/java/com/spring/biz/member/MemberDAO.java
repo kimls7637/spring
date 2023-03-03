@@ -27,8 +27,8 @@ public class MemberDAO {
 		conn=JDBCUtil.connect();
 		try {
 			pstmt=conn.prepareStatement(SQL_INSERT);
-			pstmt.setString(1, vo.getmId());
-			pstmt.setString(2, vo.getmPw());
+			pstmt.setString(1, vo.getId());
+			pstmt.setString(2, vo.getPw());
 			pstmt.setString(3, vo.getmName());
 			int res=pstmt.executeUpdate();
 			if(res<=0) {
@@ -48,9 +48,9 @@ public class MemberDAO {
 		conn=JDBCUtil.connect();
 		try {
 			pstmt=conn.prepareStatement(SQL_UPDATE);
-			pstmt.setString(1, vo.getmPw());
+			pstmt.setString(1, vo.getPw());
 			pstmt.setString(2, vo.getmName());
-			pstmt.setString(3, vo.getmId());
+			pstmt.setString(3, vo.getId());
 			int res=pstmt.executeUpdate();
 			if(res<=0) {
 				return false;
@@ -69,7 +69,7 @@ public class MemberDAO {
 		conn=JDBCUtil.connect();
 		try {
 			pstmt=conn.prepareStatement(SQL_DELETE);
-			pstmt.setString(1, vo.getmId());
+			pstmt.setString(1, vo.getId());
 			int res=pstmt.executeUpdate();
 			if(res<=0) {
 				return false;
@@ -94,8 +94,8 @@ public class MemberDAO {
 			ResultSet rs=pstmt.executeQuery();
 			while(rs.next()) {
 				MemberVO data=new MemberVO();
-				data.setmId(rs.getString("MID"));
-				data.setmPw(rs.getString("MPW"));
+				data.setId(rs.getString("MID"));
+				data.setPw(rs.getString("MPW"));
 				data.setmName(rs.getString("MNAME"));
 				data.setRole(rs.getString("ROLE"));
 				datas.add(data);
@@ -113,12 +113,12 @@ public class MemberDAO {
 		conn=JDBCUtil.connect();
 		try {
 			pstmt=conn.prepareStatement(SQL_SELECT_ONE);
-			pstmt.setString(1, vo.getmId());
+			pstmt.setString(1, vo.getId());
 			ResultSet rs=pstmt.executeQuery();
 			if(rs.next()) {
 				data=new MemberVO();
-				data.setmId(rs.getString("MID"));
-				data.setmPw(rs.getString("MPW"));
+				data.setId(rs.getString("MID"));
+				data.setPw(rs.getString("MPW"));
 				data.setmName(rs.getString("MNAME"));
 			}
 		}

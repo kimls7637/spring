@@ -12,7 +12,7 @@
 <meta name="description"
 	content="Start your development with JoeBLog landing page.">
 <meta name="author" content="Devcrud">
-<title>ACENSE : 게시글 상세보기</title>
+<title>ACENSE : 게시글 작성</title>
 <!-- font icons -->
 <link rel="stylesheet"
 	href="assets/vendors/themify-icons/css/themify-icons.css">
@@ -30,7 +30,7 @@
 }
 
 .pn {
-	padding-top: 50px;
+	padding: 50px 0 20px 0;
 	font-size: 17px;
 }
 
@@ -52,7 +52,7 @@
 	background: transparent;
 	border: none;
 	border-bottom: solid 1px #ccc;
-	padding: 20px 0px 5px 0px;
+	padding: 5px 0px 5px 0px;
 	font-size: 10pt;
 	width: 100%;
 }
@@ -85,6 +85,15 @@
 
 .login:hover {
 	color: black;
+}
+
+.login button {
+	color: white;
+}
+
+.login button:hover {
+	color: black;
+	text-decoration-line: none;
 }
 
 .page-sidebar {
@@ -157,7 +166,6 @@ img {
 
 img {
 	width: 80px;
-	padding-bottom: 20px
 }
 
 .btn-primary {
@@ -233,47 +241,53 @@ img {
 						<hr>
 
 						<!--  -->
-						<div >
+						<div>
 							<form>
 								<p class="margin-bottom" style="float: left;">카테고리</p>
-								<select style="    width: 100%;
-    border-radius: 10px;
-    border-color: #9e9e9e; margin-bottom: 30px;">
+								<select
+									style="width: 100%; border-radius: 10px; border-color: #9e9e9e; margin-bottom: 30px;">
 									<option>카테고리를 선택해주세요</option>
 									<option>커뮤니티</option>
 									<option>꿀팁공유</option>
 								</select>
-								<div style="width: 3%;">
+								<div style="width: 4%;">
 									<p class="margin-bottom">제목</p>
 								</div>
-								<input style="    width: 100%;
-    border-radius: 10px;
-    border-color: #9e9e9e; margin-bottom: 30px;" type="text"
-									placeholder="제목을 입력해주세요." />
+								<input
+									style="width: 100%; border-radius: 10px; border-color: #9e9e9e; margin-bottom: 30px;"
+									type="text" placeholder="제목을 입력해주세요." />
 								<div class="tr_hashTag_area">
 									<p class="margin-bottom" style="float: left;">
 										<strong>태그</strong>
 									</p>
 									<div class="form-group">
-										<input  type="hidden" value="" name="tag" id="rdTag" />
+										<input type="hidden" value="" name="tag" id="rdTag" />
 									</div>
 
 									<div class="form-group">
-										<input style="    width: 100%;
-    border-radius: 10px;
-    border-color: #9e9e9e; " type="text" id="tag" size="7"  
-											placeholder="엔터로 해시태그를 등록해주세요." style="width: 300px;" />
+										<input
+											style="width: 100%; border-radius: 10px; border-color: #9e9e9e;"
+											type="text" id="tag" size="7" placeholder="엔터로 해시태그를 등록해주세요."
+											style="width: 300px;" />
 									</div>
 									<ul id="tag-list" style="list-style: none;"></ul>
 								</div>
 								<div style="display: grid;">
-                        <textarea name="content" placeholder="내용" rows="6"></textarea>
-                     </div>
-                     
-                     	<div class="my-10 flex justify-end py-5 lg:my-10 lg:pl-20" style="    width: 57%; ">
-					<button style="background-color: #a0ba83;" type="submit"
-						class="inline-flex items-center space-x-2 rounded-md bg-blue-500 px-8 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-600 disabled:bg-blue-500 disabled:opacity-40">등록</button>
-				</div>
+									<textarea name="content" placeholder="내용" rows="6"></textarea>
+								</div>
+
+								<div class="my-10 flex justify-end py-5 lg:my-10 lg:pl-20"
+									style="width: 57%;">
+								<c:if test="${title==null}">
+									<button style="background-color: #a0ba83;" type="submit"
+										class="inline-flex items-center space-x-2 rounded-md bg-blue-500 px-8 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-600 disabled:bg-blue-500 disabled:opacity-40">등록</button>
+								</c:if>
+								<!-- 수정일때 나오게 하기  -->
+								<c:if test="${title!=null}">
+								<button style="background-color: #a0ba83;" type="submit"
+										class="inline-flex items-center space-x-2 rounded-md bg-blue-500 px-8 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-600 disabled:bg-blue-500 disabled:opacity-40">수정</button>
+								</c:if>
+								</div>
 							</form>
 
 
@@ -354,7 +368,7 @@ img {
                     if (result.length == 0) { 
                     	let arr =["#fff5ee", "#fffafa", "#f8f8ff", "#fffaf0", "#f5f5f5", "#f0f8ff", "#f0ffff", "#fdf5e6", "#f5fffa", "#ffefd5", "#ffdab9", "#faf0e6", "#eee8aa", "#ffe4e1", "#ffe4b5"]; 
                     	let color =  arr[Math.floor(Math.random() * arr.length)];
-                        $("#tag-list").append("<li class='tag-item' style=' margin-right:10px;   padding: 3px;  display: inline;  border-radius: 5px; background-color:"+color+";' >"+tagValue+"<span style='cursor:pointer; ' class='del-btn' idx='"+counter+"'> x</span></li>");
+                        $("#tag-list").append("<li class='tag-item' style=' margin-right:10px;   padding: 3px;  display: inline;  border-radius: 5px; background-color:"+color+";' >#"+tagValue+"<span style='cursor:pointer; ' class='del-btn' idx='"+counter+"'> x</span></li>");
                         addTag(tagValue);
                         self.val("");
                         

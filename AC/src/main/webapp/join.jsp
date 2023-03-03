@@ -4,38 +4,8 @@
 <html lang="ko" class="js-focus-visible h-full">
 <head>
 <meta charset="utf-8">
-<title>OKKY - All That Developer</title>
-<meta name="robots" content="index,follow">
-<meta name="twitter:card" content="summary_large_image">
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="msapplication-TileImage"
-	content="https://okky.kr/apple-touch-icons/icon-144x144.png">
-<meta name="msapplication-TileColor" content="#0090F9">
-
-<meta name="next-head-count" content="26">
-<base href="/">
-
-
-
-<meta http-equiv="origin-trial"
-	content="Az6AfRvI8mo7yiW5fLfj04W21t0ig6aMsGYpIqMTaX60H+b0DkO1uDr+7BrzMcimWzv/X7SXR8jI+uvbV0IJlwYAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
-<meta http-equiv="origin-trial"
-	content="A+USTya+tNvDPaxUgJooz+LaVk5hPoAxpLvSxjogX4Mk8awCTQ9iop6zJ9d5ldgU7WmHqBlnQB41LHHRFxoaBwoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
-<meta http-equiv="origin-trial"
-	content="A7FovoGr67TUBYbnY+Z0IKoJbbmRmB8fCyirUGHavNDtD91CiGyHHSA2hDG9r9T3NjUKFi6egL3RbgTwhhcVDwUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
-<link rel="preload"
-	href="https://adservice.google.co.kr/adsid/integrator.js?domain=okky.kr"
-	as="script">
-<script type="text/javascript"
-	src="https://adservice.google.co.kr/adsid/integrator.js?domain=okky.kr"></script>
-<link rel="preload"
-	href="https://adservice.google.com/adsid/integrator.js?domain=okky.kr"
-	as="script">
-<script type="text/javascript"
-	src="https://adservice.google.com/adsid/integrator.js?domain=okky.kr"></script>
+<title>ACENSE : 회원가입</title>
+<link rel="icon" href="./assets/imgs/favicon.png" />
 
 <style type="text/css">
 /*
@@ -7309,7 +7279,8 @@ keyframes spin {
 								필요한 기본정보를 입력해주세요.</span>
 						</div>
 					</div>
-					<form class="mt-8 space-y-6" action="#" method="POST">
+					<form class="mt-8 space-y-6 join" action="join.do" method="POST"
+						onsubmit="checkJoin(event);">
 						<input type="hidden" name="remember" value="true">
 						<div>
 							<div class="space-y-6 rounded-md shadow-sm">
@@ -7317,13 +7288,14 @@ keyframes spin {
 									<label for="user-id"
 										class="block text-sm font-medium text-gray-700 dark:text-gray-300">아이디</label>
 									<div class="mt-1">
-										<input id="user-id" type="text" required=""
+										<input id="user-id" type="text"
 											class="block w-full appearance-none rounded-md border border-gray-500/30 px-3 py-2 text-sm placeholder-gray-500/80 shadow-sm focus:border-gray-500 focus:outline-none focus:ring-0 dark:bg-gray-500/20 sm:text-base"
-											placeholder="4~15자 이내로 입력해주세요" name="id"
-											style="width: 80%; display: inline-block;">
+											placeholder="특수문자, 한글 제외한 5~20자" name="id" maxlength="20"
+											style="width: 80%; display: inline-block;" required>
 										<div
-											style="width: 14%; display: inline-block; padding-top: 7px; padding-bottom: 7px; border-radius: 7px; margin-left: 9px;">
-											<button>중복 체크</button>
+											style="width: auto; display: inline-block; padding-top: 7px; padding-bottom: 7px; border-radius: 7px; margin-left: 9px;">
+											<button type="button" class="phonebutton" id="idCheck">중복
+												체크</button>
 										</div>
 									</div>
 
@@ -7332,56 +7304,44 @@ keyframes spin {
 									<label for="password"
 										class="block text-sm font-medium text-gray-700 dark:text-gray-300">비밀번호</label>
 									<div class="mt-1">
-										<input id="password" type="password"
-											autocomplete="current-password" required=""
+										<input id="password" type="password" required
+											autocomplete="current-password"
 											class="block w-full appearance-none rounded-md border border-gray-500/30 px-3 py-2 text-sm placeholder-gray-500/80 shadow-sm focus:border-gray-500 focus:outline-none focus:ring-0 dark:bg-gray-500/20 sm:text-base"
-											placeholder="최소 6자 이상(알파벳, 숫자 필수)" name="password" style="width: 80%;">
+											placeholder="특수문자, 한글 제외한 8~16자" name="pw" maxlength="16"
+											style="width: 80%;">
 									</div>
 								</div>
 								<div>
 									<label for="email-address"
 										class="block text-sm font-medium text-gray-700 dark:text-gray-300">이메일</label>
 									<div class="mt-1">
-										<input id="email-address" type="email" autocomplete="email"
-											required=""
+										<input id="email" type="text" autocomplete="email"
+											onchange="valiFormEmail(this)" required
 											class="block w-full appearance-none rounded-md border border-gray-500/30 px-3 py-2 text-sm placeholder-gray-500/80 shadow-sm focus:border-gray-500 focus:outline-none focus:ring-0 dark:bg-gray-500/20 sm:text-base"
-											placeholder="munchkin@okky.kr" name="email" style="width: 80%; display: inline-block;">
-												<div
-											style="width: 17%; display: inline-block; padding-top: 7px; padding-bottom: 7px; border-radius: 7px; margin-left: 9px;">
-											<button>이메일 인증</button>
-										</div>
-									</div>
-									<div class="mt-1">
-										<input id="email-address" type="email" autocomplete="email"
-											required=""
-											class="block w-full appearance-none rounded-md border border-gray-500/30 px-3 py-2 text-sm placeholder-gray-500/80 shadow-sm focus:border-gray-500 focus:outline-none focus:ring-0 dark:bg-gray-500/20 sm:text-base"
-											placeholder="인증번호 확인" name="email" style="width: 80%; display: inline-block;">
-												<div
-											style="width: 14%; display: inline-block; padding-top: 7px; padding-bottom: 7px; border-radius: 7px; margin-left: 9px;">
-											<button>확인</button>
-										</div>
+											placeholder="acensecommu@sixsense.com" name="mEmail"
+											style="width: 80%; display: inline-block;">
 									</div>
 								</div>
 								<div>
 									<label for="fullName"
 										class="block text-sm font-medium text-gray-700 dark:text-gray-300">실명</label>
 									<div class="mt-1">
-										<input id="fullName" type="text" required=""
+										<input id="fullName" type="text" required
 											class="block w-full appearance-none rounded-md border border-gray-500/30 px-3 py-2 text-sm placeholder-gray-500/80 shadow-sm focus:border-gray-500 focus:outline-none focus:ring-0 dark:bg-gray-500/20 sm:text-base"
-											placeholder="홍길동" name="fullName" style="width: 80%;">
+											placeholder="홍길동" name="mName" style="width: 80%;" maxlength="5">
 									</div>
 								</div>
 								<div>
 									<label for="nickname"
 										class="block text-sm font-medium text-gray-700 dark:text-gray-300">닉네임</label>
 									<div class="mt-1">
-										<input id="nickname" type="text" required=""
+										<input id="nickname" type="text" required
 											class="block w-full appearance-none rounded-md border border-gray-500/30 px-3 py-2 text-sm placeholder-gray-500/80 shadow-sm focus:border-gray-500 focus:outline-none focus:ring-0 dark:bg-gray-500/20 sm:text-base"
-											placeholder="별명을 알파벳, 한글, 숫자를 20자 이하로 입력해주세요."
-											name="nickname" style="width: 80%; display: inline-block;">
-												<div
-											style="width: 14%; display: inline-block; padding-top: 7px; padding-bottom: 7px; border-radius: 7px; margin-left: 9px;">
-											<button>중복 체크</button>
+											placeholder="별명을 알파벳, 한글, 숫자 20자 이내"
+											name="mNickname" style="width: 80%; display: inline-block;" maxlength="20">
+										<div
+											style="width: auto; display: inline-block; padding-top: 7px; padding-bottom: 7px; border-radius: 7px; margin-left: 9px;">
+											<button type="button" class="phonebutton" id="ninkCheck">중복 체크</button>
 										</div>
 									</div>
 								</div>
@@ -7391,13 +7351,12 @@ keyframes spin {
 						<div
 							style="border: 1px solid black; border-radius: 5px; margin-top: 40px; margin-bottom: 40px;">
 							<button type="submit"
-								class="flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-400 focus:outline-none disabled:bg-blue-500 disabled:opacity-40"
-								disabled="">회원가입</button>
+								class="flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-400 focus:outline-none disabled:bg-blue-500 disabled:opacity-40">회원가입</button>
 						</div>
 						<p class="flex items-center justify-center space-x-1 text-sm">
 							<span>이미 회원이신가요?</span><a
 								class="flex items-center text-blue-500 underline hover:text-blue-400"
-								href="/login">로그인</a>
+								href="main.jsp">로그인</a>
 						</p>
 					</form>
 				</div>
@@ -7419,8 +7378,10 @@ keyframes spin {
 				data-google-container-id="a!1" data-load-complete="true"></iframe>
 		</div>
 	</ins>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script src="https://www.googletagmanager.com/gtag/js?id=G-YB6VRG1VMM"
 		data-nscript="afterInteractive"></script>
+
 	<script data-nscript="afterInteractive">
 		window.dataLayer = window.dataLayer || [];
 		function gtag() {
@@ -7428,7 +7389,134 @@ keyframes spin {
 		}
 		gtag('js', new Date());
 		gtag('config', 'G-YB6VRG1VMM');
+
+		/* 아이디 정규식 스크립트 */
+		const id = document.getElementById('user-id');
+		id.addEventListener('input', function() {
+			let regExp = /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ㄱ-ㅎㅏ-ㅣ가-힣]/gim;
+			id.value = id.value.replace(regExp, '');
+		})
+
+		/* 비번 정규식 스크립트 */
+		const pw = document.getElementById('password');
+		pw.addEventListener('input', function() {
+			let regExp = /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ㄱ-ㅎㅏ-ㅣ가-힣]/gim;
+			pw.value = pw.value.replace(regExp, '');
+		})
+
+		
+
+		/* 닉네임 admin/ADMIN 못하게막기 */
+		const ad = document.getElementById('nickname');
+		console.log('dfdafadsf' + ad);
+		ad.addEventListener('input', function() {
+			ad.value = ad.value.replace('admin', '');
+			ad.value = ad.value.replace('ADMIN', '');
+		})
+
+		/* 아이디 중복 체크 */
+		let idFlag = false;
+		let flag = false;
+		$('#idCheck').click(function() {
+			var id = $('#user-id').val();
+			$.ajax({
+				url : 'idCheck',
+				type : 'post',
+				data : {
+					id : id
+				},
+				dataType : 'json',
+				success : function(result) {
+					if (result == 1) {
+						alert("사용가능한 아이디입니다");
+						idFlag = true;
+					} else {
+						alert("사용불가능한 아이디입니다");
+						idFlag = false;
+					}
+				},
+				error : function() {
+					alert("서버요청실패");
+				}
+			})
+		})
+		// 닉네임 중복체크
+		$('#nickCheck').click(function() {
+			var nickCheck = $('#user-id').val();
+			$.ajax({
+				url : 'nickCheck',
+				type : 'post',
+				data : {
+					mNickname : nickCheck
+				},
+				dataType : 'json',
+				success : function(result) {
+					if (result == 1) {
+						alert("사용가능한 닉네임입니다.");
+						flag = true;
+					} else {
+						alert("사용불가능한 닉네임입니다.");
+						flag = false;
+					}
+				},
+				error : function() {
+					alert("서버요청실패");
+				}
+			})
+		})
+		
+		// 회원가입
+		  function checkJoin(event){
+              if(idFlag){
+                 if(flag){
+                    console.log("야호");
+                    alert("회원가입 성공");
+                 }
+                 else{
+                	  alert("닉네임 중복확인 해주세요");
+                      window.scrollTo(0,0);
+                      event.preventDefault();
+                 }
+               }
+               else{
+                  alert("아이디 중복확인 해주세요");
+                  window.scrollTo(0,0);
+                  event.preventDefault();
+               }
+
+          }
+		
+		
+		function valiFormEmail(obj){
+	if(validEmail(obj) == false){
+  	alert("올바른 이메일 주소를 입력하세요.");
+    obj.value = '';
+    obj.focus();
+    return false;
+  }
+}
+ 
+ 
+		// 이메일 정규식 검사
+ 
+	/* input_email.addEventListener('change', (e) => {
+ 	 valiFormEmail(e.target);
+	}); */
+ 
+	function validEmail(obj){
+	var pattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+  	//var pattern = new RegExp(/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i);
+  	//var pattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/;
+  	//var pattern = new RegExp(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/);
+  	//return pattern.test(obj.value);
+	return (obj.value.match(pattern) != null);
+	}
+	
+	
+	
 	</script>
+
+
 	<next-route-announcer>
 	<p aria-live="assertive" id="__next-route-announcer__" role="alert"
 		style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;">OKKY
