@@ -61,6 +61,7 @@ public class BoardController {
 	public String insertBoard(BoardVO vo, BoardDAO boardDAO, HttpSession session) {
 		MemberVO mvo = (MemberVO)session.getAttribute("member");
 		vo.setWriter(mvo.getMid());
+		System.out.println(mvo.getMid()+"아이디이이ㅣ이이이이ㅣ이이이");
 		boardDAO.insertBoard(vo);
 		
 		return "main.do";
