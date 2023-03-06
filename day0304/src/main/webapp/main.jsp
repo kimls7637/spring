@@ -3,9 +3,9 @@ pageEncoding="UTF-8"%> <%@ taglib uri="http://java.sun.com/jsp/jstl/core"
 prefix="c" %>
 <!DOCTYPE html>
 <!--
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+   Stellar by HTML5 UP
+   html5up.net | @ajlkn
+   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
     <head>
@@ -20,6 +20,11 @@ prefix="c" %>
             ><link rel="stylesheet" href="assets/css/noscript.css"
         /></noscript>
         <script src="https://cdn.ckeditor.com/4.19.0/full/ckeditor.js"></script>
+        
+        
+        <meta property="og:url" content="https://ckeditor.com/docs/ckeditor4/latest/examples/autogrow.html">
+        <link rel="canonical" href="https://ckeditor.com/docs/ckeditor4/latest/examples/autogrow.html">
+        <script type="text/javascript" src="https://ckeditor.com/docs/vendors/4.20.2/ckeditor/plugins/autogrow/plugin.js?t=N227"></script>
     </head>
     <body class="is-preload">
         <!-- Wrapper -->
@@ -317,10 +322,43 @@ prefix="c" %>
         </div>
         <!-- Scripts -->
         <script>
+        
+        
+        
             CKEDITOR.replace("editor", {
-                filebrowserUploadUrl: "fileupload.do"
+                filebrowserUploadUrl: "fileupload.do",
+         
+                extraPlugins : 'autogrow',
+                autoGrow_minHeight : 250,
+                autoGrow_maxHeight : 1000,
+                autoGrow_bottomSpace : 50,
+                removePlugins : 'resize',
+                removeButtons : 'PasteFromWord',
+                
+                	toolbarGroups : [
+                			{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+                			{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+                			{ name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+                			{ name: 'forms', groups: [ 'forms' ] },
+                			{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+                			{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+                			{ name: 'links', groups: [ 'links' ] },
+                			{ name: 'insert', groups: [ 'insert' ] },
+                			{ name: 'styles', groups: [ 'styles' ] },
+                			{ name: 'colors', groups: [ 'colors' ] },
+                			{ name: 'about', groups: [ 'about' ] },
+                			'/',
+                			{ name: 'tools', groups: [ 'tools' ] },
+                			{ name: 'others', groups: [ 'others' ] }
+                		],
+
+                	removeButtons : 'Source,Save,Templates,NewPage,Preview,Print,PasteText,Paste,Copy,Cut,PasteFromWord,SelectAll,Scayt,Form,HiddenField,Textarea,Checkbox,Select,Button,Radio,TextField,ImageButton,CopyFormatting,CreateDiv,BidiLtr,BidiRtl,Language,Anchor,Flash,Iframe,PageBreak,ShowBlocks,Maximize'
+                   
+                   
             });
-        </script>
+            
+            
+            </script>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery.scrollex.min.js"></script>
         <script src="assets/js/jquery.scrolly.min.js"></script>

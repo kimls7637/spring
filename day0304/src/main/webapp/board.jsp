@@ -18,6 +18,16 @@
 	<link rel="stylesheet" href="assets/css/noscript.css" />
 </noscript>
 <script src="https://cdn.ckeditor.com/4.19.0/full/ckeditor.js"></script>
+<style>
+<style>
+.ck-editor__editable 
+{ 
+  height: 1000px; 
+}
+</style>
+<meta property="og:url" content="https://ckeditor.com/docs/ckeditor4/latest/examples/autogrow.html">
+        <link rel="canonical" href="https://ckeditor.com/docs/ckeditor4/latest/examples/autogrow.html">
+        <script type="text/javascript" src="https://ckeditor.com/docs/vendors/4.20.2/ckeditor/plugins/autogrow/plugin.js?t=N227"></script>
 </head>
 <body class="is-preload">
 
@@ -210,14 +220,19 @@
 	<!-- Scripts -->
 	<script>
             CKEDITOR.replace("editor", {
-                filebrowserUploadUrl: "fileupload.do"
+	            extraPlugins : 'autogrow',
+	            autoGrow_minHeight : 250,
+	            autoGrow_maxHeight : 1000,
+	            autoGrow_bottomSpace : 50,
+	            removePlugins : 'resize',
+	            removeButtons : 'PasteFromWord'
             });
 
-            window.onlad = function(){
-			const textareaHeight = document.getElementById("cke_1_contents");
-			
-			textareaHeight.style.height = 1000 + "px";
-			console.log("냥");
+            window.onload = function(){
+            const ckeTop = document.getElementById("cke_1_top");
+            ckeTop.style.display = "none";
+            const ckeBot = document.getElementById("cke_1_bottom");
+            ckeBot.style.display = "none";
             }
         </script>
 	<script src="assets/js/jquery.min.js"></script>

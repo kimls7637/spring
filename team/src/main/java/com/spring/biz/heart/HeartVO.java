@@ -5,6 +5,7 @@ public class HeartVO {
 	private String htype;
 	private String hid;
 	private int hbnum;
+	private int heartCnt;
 	public int getHnum() {
 		return hnum;
 	}
@@ -28,5 +29,11 @@ public class HeartVO {
 	}
 	public void setHbnum(int hbnum) {
 		this.hbnum = hbnum;
+	}
+	public int getHeartCnt() {
+		return heartCnt;
+	}
+	public void setHeartCnt(int heartCnt) {
+		this.heartCnt = heartCnt;
 	}
 }
