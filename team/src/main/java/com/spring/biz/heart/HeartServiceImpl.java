@@ -1,7 +1,5 @@
 package com.spring.biz.heart;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +20,7 @@ public class HeartServiceImpl implements HeartService {
 	}
 
 	@Override
-	public List<HeartVO> selectAll(HeartVO vo) {
-		return HeartDAO.selectAll(vo);
+	public HeartVO selectAll(HeartVO vo) {
+		return HeartDAO.selectHeartCnt(vo);
 	}
 }

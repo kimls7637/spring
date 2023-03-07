@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="editor"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="editor"/>
-			<item value="insert"/>
-			<item value="main.do`"/>
-			<item value="main.do"/>
-			<item value="BoardRowMapperAll"/>
-			<item value="SQL_SELECTALL"/>
-			<item value="5000"/>
-			<item value="enc"/>
+			<item value="insertInsta.do"/>
+			<item value="insta"/>
 			<item value="form"/>
-			<item value="preview"/>
-			<item value="input-file"/>
-			<item value="fileInput"/>
-			<item value="BoardVO"/>
-			<item value="BoardDAO"/>
-			<item value="bvo"/>
+			<item value="fileupload"/>
+			<item value="spring"/>
+			<item value="캠핑장"/>
+			<item value="캠핑장 찾기"/>
+			<item value="dependencies"/>
+			<item value="depende"/>
+			<item value="gson"/>
+			<item value="PostMapping"/>
+			<item value="textarea"/>
+			<item value="editor"/>
+			<item value="SQL_SELECTONE_LOGIN"/>
+			<item value="Board"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Member"/>
 			<item value="2000"/>
 			<item value="TagVO"/>
 			<item value="TagDAO"/>

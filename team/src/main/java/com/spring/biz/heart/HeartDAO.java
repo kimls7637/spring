@@ -2,16 +2,11 @@ package com.spring.biz.heart;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
-
-import com.spring.biz.board.BoardVO;
 
 @Repository("heartDAO")
 public class HeartDAO {
@@ -42,10 +37,11 @@ public class HeartDAO {
 		return true;
 	}
 	
-	public List<HeartVO> selectAll(HeartVO vo){
+	
+	public HeartVO selectHeartCnt(HeartVO vo){
 		Object[] args = {vo.getHtype(), vo.getHbnum()};
 		try {
-			return jdbcTemplate.query(SQL_SELECT_HEARTCNT, args, new HeartRowMapper());
+			return jdbcTemplate.queryForObject(SQL_SELECT_HEARTCNT, args, new HeartRowMapper());
 		} catch(Exception e) {
 			return null;
 		}
